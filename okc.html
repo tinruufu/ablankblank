@@ -12,7 +12,7 @@
       body {
         background-color: #104da1;
         color: #d5e0f8;
-        font-size: 22px;
+        font-size: 2.2rem;
         font-family: 'Open Sans', sans-serif;
         margin: 1em auto;
         text-align: center;
@@ -20,14 +20,14 @@
 
       .box {
         display: inline-block;
-        font-size: 18px;
-        vertical-align: 10%;
+        font-size: 1.8rem;
+        vertical-align: 7%;
         box-sizing: border-box;
-        padding: 15px 20px;
+        padding: 1.5rem 2rem;
         color: #5e6573;
         background-color: #fff;
-        border-radius: 2px;
-        margin: 0 14px;
+        border-radius: 0.2rem;
+        margin: 0 1.4rem;
       }
 
       .box::after {
@@ -38,15 +38,53 @@
       .box.button {
         background-color: #00d280;
         color: #fff;
-        padding: 15px 30px;
+        padding: 1.5rem 3rem;
       }
 
       .box.button::after {
         content: none;
       }
+
+      #content {
+        display: inline-block;
+      }
     </style>
+    <meta name="viewport" content="initial-scale=2, minimum-scale=2">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script id="template" type="text/x-handlebars-template">
+      {{#items}}
+        <span class="
+          {{#if box}}
+            box
+          {{else}}
+            prefix
+          {{/if}}
+        ">{{text}}</span>
+      {{/items}}
+    </script>
   </head>
   <body>
-    <p><span class="prefix">i am a</span> <span class="box">straight</span> <span class="box">woman</span> <span class="prefix">but also</span> <span class="box">super gay</span> <span class="box button">continue</span></p>
+    <p><span id="content">
+      i am
+      <span id="target"></span>
+      <!--
+        <span class="prefix">i am a</span> <span class="box">straight</span> <span class="box">woman</span> <span class="prefix">but also</span> <span class="box">super gay</span>
+      -->
+      <span class="box button">continue</span>
+    </span></p>
+
   </body>
+
+  <script>
+    function getSize() {
+      var content = document.getElementById('content');
+      return [content.clientWidth + 40, content.clientHeight];
+    }
+
+    function setText(items) {
+      var source = document.getElementById('template').innerHTML;
+      var template = Handlebars.compile(source);
+      document.getElementById('target').innerHTML = template({items: items});
+    }
+  </script>
 </html>
