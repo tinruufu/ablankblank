@@ -4,8 +4,6 @@ from tempfile import mkstemp, mkdtemp
 
 from selenium.webdriver import PhantomJS
 
-from blank import get_structure
-
 
 def generate_image(structure):
     image_path = os.path.join(mkdtemp(), 'okc.png')
@@ -24,4 +22,5 @@ def generate_image(structure):
 
 
 if __name__ == '__main__':
-    generate_image([segment.context() for segment in get_structure()])
+    from blank import get_structure
+    print generate_image([segment.context() for segment in get_structure()])

@@ -28,12 +28,22 @@ class Segment(object):
     def __init__(self, words):
         self.words = words
 
+    def context(self):
+        return {
+            'text': self.string,
+            'box': self.is_boxed,
+        }
+
+    def __unicode__(self):
+        return '[{}]'.format(self.string) if self.is_boxed else self.string
+
+    @property
     def is_boxed(self):
         return not all((w in CONNECTIVES for w in self.words))
 
-    def __unicode__(self):
-        string = ' '.join(self.words)
-        return '[{}]'.format(string) if self.is_boxed() else string
+    @property
+    def string(self):
+        return ' '.join(self.words)
 
 
 def populate_words():
@@ -52,7 +62,7 @@ def get_word():
 def get_example():
     tried = []
 
-    for attempt in xrange(5):
+    for attempt in xrange(15):
         seed = get_word()
         tried.append(seed)
         _, examples = requests.get('https://api.bing.com/osjson.aspx',
