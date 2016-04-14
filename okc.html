@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      body {
+        background-color: #104da1;
+        color: #d5e0f8;
+        font-size: 22px;
+        font-family: 'Open Sans', sans-serif;
+        margin: 1em auto;
+        text-align: center;
+      }
+
+      .box {
+        display: inline-block;
+        font-size: 18px;
+        vertical-align: 10%;
+        box-sizing: border-box;
+        padding: 15px 20px;
+        color: #5e6573;
+        background-color: #fff;
+        border-radius: 2px;
+        margin: 0 14px;
+      }
+
+      .box::after {
+        content: '　▾';
+        color: #949aa6;
+      }
+
+      .box.button {
+        background-color: #00d280;
+        color: #fff;
+        padding: 15px 30px;
+      }
+
+      .box.button::after {
+        content: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p><span class="prefix">i am a</span> <span class="box">straight</span> <span class="box">woman</span> <span class="prefix">but also</span> <span class="box">super gay</span> <span class="box button">continue</span></p>
+  </body>
+</html>
