@@ -9,16 +9,19 @@ import requests
 inflect = engine()
 
 WORDS = []
-CONNECTIVES = [
+CONNECTIVES = set([
     'in',
     'the',
     'to',
     'of',
+    'for',
     'on',
     'and',
     'a',
     'an',
-]
+    'with',
+    'from',
+])
 
 
 class Segment(object):
@@ -76,7 +79,16 @@ def get_structure():
         else:
             islands[-1].append(word)
 
-    return [Segment(i) for i in islands]
+    segments = [Segment(i) for i in islands]
+
+    if len(segments) == 2 and len(segments[1].words) == 2:
+        segments = [
+            Segment([w])
+            for s in segments
+            for w in s.words
+        ]
+
+    return segments
 
 
 if __name__ == '__main__':
