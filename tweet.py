@@ -12,12 +12,18 @@ auth.set_access_token(token_key, token_secret)
 api = tweepy.API(auth)
 
 
-def tweet():
+def tweet(interactive=False):
     structure = get_structure()
     status = 'i am {}'.format(' '.join((unicode(s) for s in structure)))
+    if interactive:
+        print status
+        if not raw_input('do u wanna post?\n').startswith('y'):
+            return
+
     image = generate_image([segment.context() for segment in structure])
     api.update_with_media(image, status=status)
 
 
 if __name__ == '__main__':
-    tweet()
+    from sys import argv
+    tweet(interactive='-i' in argv)
