@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
     <style>
       * {
         margin: 0;
         padding: 0;
         border: 0;
       }
+
       body {
         background-color: #104da1;
         color: #d5e0f8;
@@ -16,6 +17,29 @@
         font-family: 'Open Sans', sans-serif;
         margin: 1em auto;
         text-align: center;
+      }
+
+      #content {
+        padding-top: 12rem;
+        padding-left: 1rem;  // compensate for the big button margins
+        min-width: 20.6rem;
+        background-image: url('okc.png');
+        background-size: 20.6rem 6.6rem;
+        background-repeat: no-repeat;
+        background-position: center 1.3rem;
+        display: inline-block;
+      }
+
+      #tagline {
+        color: #fff;
+        font-weight: 300;
+        font-size: 3.6rem;
+        display: inline-block;
+        padding-bottom: 5rem;
+      }
+
+      #target {
+        padding-bottom: 5rem;
       }
 
       .box {
@@ -44,10 +68,6 @@
       .box.button::after {
         content: none;
       }
-
-      #content {
-        display: inline-block;
-      }
     </style>
     <meta name="viewport" content="initial-scale=2, minimum-scale=2">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
@@ -65,12 +85,14 @@
   </head>
   <body>
     <p><span id="content">
-      i am
+      <span id="tagline">Join the best free dating site on Earth.</span>
+      <br>
+      I am
       <span id="target"></span>
       <!--
         <span class="prefix">i am a</span> <span class="box">straight</span> <span class="box">woman</span> <span class="prefix">but also</span> <span class="box">super gay</span>
       -->
-      <span class="box button">continue</span>
+      <span class="box button">Continue</span>
     </span></p>
 
   </body>
