@@ -21,6 +21,7 @@ CONNECTIVES = set([
     'an',
     'with',
     'from',
+    'is',
 ])
 
 
