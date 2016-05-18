@@ -70,7 +70,11 @@ def get_example():
         _, examples = requests.get('https://api.bing.com/osjson.aspx',
                                    params={'query': inflect.a(seed)}).json()
 
-        candidates = [e for e in examples if e.split()[0] in ('a', 'an')]
+        candidates = [
+            e for e in examples if
+            e.split()[0] in ('a', 'an') and
+            e.split()[-1] not in CONNECTIVES
+        ]
         if candidates:
             return choice(candidates)
 
