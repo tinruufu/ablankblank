@@ -67,8 +67,9 @@ def get_example():
     for attempt in xrange(15):
         seed = get_word()
         tried.append(seed)
-        _, examples = requests.get('https://api.bing.com/osjson.aspx',
-                                   params={'query': inflect.a(seed)}).json()
+        resp = requests.get('https://api.bing.com/osjson.aspx',
+                            params={'query': inflect.a(seed)}).json()
+        examples = resp[1]
 
         candidates = [
             e for e in examples if
