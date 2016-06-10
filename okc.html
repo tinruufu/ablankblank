@@ -2,73 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300&amp;subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-      }
-
-      body {
-        background-color: #104da1;
-        color: #d5e0f8;
-        font-size: 2.2rem;
-        font-family: 'Open Sans', sans-serif;
-        margin: 1em auto;
-        text-align: center;
-      }
-
-      #content {
-        padding-top: 12rem;
-        padding-left: 1rem;  // compensate for the big button margins
-        min-width: 20.6rem;
-        background-image: url('okc.png');
-        background-size: 20.6rem 6.6rem;
-        background-repeat: no-repeat;
-        background-position: center 1.3rem;
-        display: inline-block;
-      }
-
-      #tagline {
-        color: #fff;
-        font-weight: 300;
-        font-size: 3.6rem;
-        display: inline-block;
-        padding-bottom: 5rem;
-      }
-
-      #target {
-        padding-bottom: 5rem;
-      }
-
-      .box {
-        display: inline-block;
-        font-size: 1.8rem;
-        vertical-align: 7%;
-        box-sizing: border-box;
-        padding: 1.5rem 2rem;
-        color: #5e6573;
-        background-color: #fff;
-        border-radius: 0.2rem;
-        margin: 0 1.4rem;
-      }
-
-      .box::after {
-        content: '　▾';
-        color: #949aa6;
-      }
-
-      .box.button {
-        background-color: #00d280;
-        color: #fff;
-        padding: 1.5rem 3rem;
-      }
-
-      .box.button::after {
-        content: none;
-      }
-    </style>
+    <link href="style.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="initial-scale=2, minimum-scale=2">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script id="template" type="text/x-handlebars-template">
@@ -85,13 +19,14 @@
   </head>
   <body>
     <p><span id="content">
-      <span id="tagline">Join the best free dating site on Earth.</span>
-      <br>
-      I am
-      <span id="target"></span>
-      <!--
-        <span class="prefix">i am a</span> <span class="box">straight</span> <span class="box">woman</span> <span class="prefix">but also</span> <span class="box">super gay</span>
-      -->
+      <span id="tagline">Join the best free dating site on Earth.</span><br>
+
+      <span class="prefix">I am</span>
+
+      <span id="target">
+        <span class="prefix">a</span> <span class="box">Straight</span> <span class="box">Woman</span> <span class="prefix">but also</span> <span class="box">super gay</span>
+      </span>
+
       <span class="box button">Continue</span>
     </span></p>
 

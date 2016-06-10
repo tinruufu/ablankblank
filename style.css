@@ -1,0 +1,102 @@
+/* fonts */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/OpenSans-Regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/OpenSans-Light-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ok-icon';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/ok-icon.woff') format('woff');
+}
+
+/* actual styles */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: #104da1;
+  color: #fff;
+  font-size: 2.2rem;
+  font-family: 'Open Sans', sans-serif;
+  margin: 1em auto;
+  text-align: center;
+  line-height: 5.8rem;
+}
+
+#content {
+  padding-top: 12rem;
+  padding-left: 1rem;  // compensate for the big button margins
+  min-width: 20.6rem;
+  background-image: url('okc.png');
+  background-size: 20.6rem 6.6rem;
+  background-repeat: no-repeat;
+  background-position: center 1.3rem;
+  display: inline-block;
+}
+
+#tagline {
+  color: #fff;
+  font-weight: 300;
+  font-size: 3.6rem;
+  display: inline-block;
+  padding-bottom: 5rem;
+}
+
+#target {
+  padding-bottom: 5rem;
+}
+
+.prefix {
+  display: inline-block;
+  position: relative;
+  top: 0.1rem;
+}
+
+.box {
+  display: inline-block;
+  font-size: 1.8rem;
+  box-sizing: border-box;
+  padding: 0 5rem 0 2rem;
+  line-height: 5.4rem;
+  color: #fff;
+  background-color: #3260c7;
+  border-radius: 0.2rem;
+  margin: 0 1rem;
+  box-shadow: 0 0.2rem 0.1rem #07408d;
+  position: relative;
+}
+
+.box::after {
+  font-family: 'ok-icon';
+  content: 'v';
+  font-size: 1.5rem;
+  color: #9dbaf2;
+  opacity: 0.7;
+  position: absolute;
+  top: 0.2rem;
+  right: 1.8rem;
+}
+
+.box.button {
+  background-color: #00d280;
+  color: #fff;
+  padding: 0 3rem;
+}
+
+.box.button::after {
+  content: none;
+}
