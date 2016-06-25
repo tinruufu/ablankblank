@@ -2,3 +2,4 @@ requests
 inflect==0.2.5
 selenium==2.53.1
 tweepy==3.4.0
+pillow

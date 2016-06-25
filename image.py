@@ -1,7 +1,9 @@
 import json
+import subprocess
 import os
 from tempfile import mkstemp, mkdtemp
 
+from PIL import Image
 from selenium.webdriver import PhantomJS
 
 
@@ -18,6 +20,17 @@ def generate_image(structure):
     driver.execute_script('setText({});'.format(json.dumps(structure)))
     driver.set_window_size(*driver.execute_script('return getSize();'))
     driver.save_screenshot(image_path)
+
+    # twitter's gonna make our beautiful screenshot a jpeg unless we make it
+    # think that we're using transparency for a reason, so,,
+    img = Image.open(image_path)
+    origin = img.getpixel((0, 0))
+    new_origin = origin[:3] + (254,)
+    img.putpixel((0, 0), new_origin)
+    img.save(image_path)
+
+    subprocess.check_call(['optipng', '-quiet', image_path])
+
     return image_path
 
 
