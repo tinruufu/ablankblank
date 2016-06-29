@@ -24,6 +24,10 @@ CONNECTIVES = set([
     'by',
     'is',
 ])
+SLURS = requests.get(
+    'https://raw.githubusercontent.com/dariusk/wordfilter/'
+    'master/lib/badwords.json'
+).json()
 
 
 class Segment(object):
@@ -73,6 +77,7 @@ def get_example():
 
         candidates = [
             e for e in examples if
+            not any((s in e for s in SLURS)) and
             e.split()[0] in ('a', 'an') and
             e.split()[-1] not in CONNECTIVES
         ]
