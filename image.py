@@ -1,4 +1,5 @@
 import json
+from random import random
 import subprocess
 import os
 from tempfile import mkstemp, mkdtemp
@@ -18,6 +19,10 @@ def generate_image(structure):
     driver.set_window_size(2000, 500)
     driver.get(url)
     driver.execute_script('setText({});'.format(json.dumps(structure)))
+
+    if random() > 0.3:
+        driver.execute_script('hideForm();')
+
     driver.set_window_size(*driver.execute_script('return getSize();'))
     driver.save_screenshot(image_path)
 

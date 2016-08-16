@@ -30,6 +30,12 @@
       <span class="box button">Continue</span>
     </span></p>
 
+    <p id="form">
+      <span>
+        I don't want to see or be seen by straight people.
+      </span>
+    </p>
+
   </body>
 
   <script>
@@ -42,6 +48,10 @@
       var source = document.getElementById('template').innerHTML;
       var template = Handlebars.compile(source);
       document.getElementById('target').innerHTML = template({items: items});
+    }
+    
+    function hideForm() {
+      document.getElementById('form').remove()
     }
   </script>
 </html>

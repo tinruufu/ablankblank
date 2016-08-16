@@ -100,3 +100,26 @@ body {
 .box.button::after {
   content: none;
 }
+
+#form {
+  margin: 2rem 0;
+  display: block;
+}
+
+#form span {
+  border-radius: .2rem;
+  font-size: 1.4rem;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 2rem 0 6rem;
+  background-color: #225bb2;
+  color: #9dbaf2;
+}
+
+#form span {
+  background-origin: padding-box;
+  background-position: 2.5rem -124px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-image: url(formsprite.png);
+}
