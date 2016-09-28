@@ -106,7 +106,7 @@ def get_structure():
 
     segments = [Segment(i) for i in islands]
 
-    if len(segments) == 2 and len(segments[1].words) == 2:
+    if len(segments) == 2 and len(segments[1].words) <= 3:
         segments = [
             Segment([w])
             for s in segments
