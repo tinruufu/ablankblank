@@ -1,16 +1,9 @@
 /* fonts */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'GT America';
   font-style: normal;
   font-weight: 400;
-  src: url('fonts/OpenSans-Regular-webfont.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: url('fonts/OpenSans-Light-webfont.woff') format('woff');
+  src: url('fonts/GT-America-regular.woff') format('woff');
 }
 
 @font-face {
@@ -28,32 +21,23 @@
 }
 
 body {
-  background-color: #104da1;
+  background-color: #4fc5d0;
   color: #fff;
   font-size: 2.2rem;
-  font-family: 'Open Sans', sans-serif;
-  margin: 1em auto;
-  text-align: center;
+  font-family: 'GT America', sans-serif;
+  margin: 1em 1em 3em;
+  padding: 0 1em;
+  text-align: left;
   line-height: 5.8rem;
+  min-width: 25em;
+}
+
+#everything {
+  display: inline-block;
 }
 
 #content {
-  padding-top: 12rem;
-  padding-left: 1rem;  // compensate for the big button margins
-  min-width: 20.6rem;
-  background-image: url('okc.png');
-  background-size: 20.6rem 6.6rem;
-  background-repeat: no-repeat;
-  background-position: center 1.3rem;
   display: inline-block;
-}
-
-#tagline {
-  color: #fff;
-  font-weight: 300;
-  font-size: 3.6rem;
-  display: inline-block;
-  padding-bottom: 5rem;
 }
 
 #target {
@@ -64,27 +48,34 @@ body {
   display: inline-block;
   position: relative;
   top: 0.1rem;
+  margin: 0 .6rem 0 0;
 }
+
+.prefix:first-child {
+  display: block;
+  font-size: 2rem;
+}
+
+.prefix:first-child::before { content: 'You are '; }
 
 .box {
   display: inline-block;
   font-size: 1.8rem;
   box-sizing: border-box;
-  padding: 0 5rem 0 2rem;
+  padding: 0 5rem 0 1.7rem;
   line-height: 5.4rem;
-  color: #fff;
-  background-color: #3260c7;
+  color: #1e1e1e;
+  background-color: #fff;
   border-radius: 0.2rem;
-  margin: 0 1rem;
-  box-shadow: 0 0.2rem 0.1rem #07408d;
+  margin: 0 .6rem 0 0;
   position: relative;
 }
 
 .box::after {
   font-family: 'ok-icon';
   content: 'v';
-  font-size: 1.5rem;
-  color: #9dbaf2;
+  font-size: 1.2rem;
+  color: #3260c7;
   opacity: 0.7;
   position: absolute;
   top: 0.2rem;
@@ -92,7 +83,7 @@ body {
 }
 
 .box.button {
-  background-color: #00d280;
+  background-color: #4c7bd9;
   color: #fff;
   padding: 0 3rem;
 }
@@ -102,24 +93,39 @@ body {
 }
 
 #form {
-  margin: 2rem 0;
+  margin: 2rem 0 4rem;
   display: block;
+  position: relative;
+  font-size: 1.5rem;
 }
-
 #form span {
-  border-radius: .2rem;
-  font-size: 1.4rem;
+  position: absolute;
+  padding-left: 3.5em;
+  line-height: 1.7em;
+}
+#form::before {
+  font-size: 1.7em;
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
   display: inline-block;
-  margin: 0 auto;
-  padding: 0 2rem 0 6rem;
-  background-color: #225bb2;
-  color: #9dbaf2;
+  border-radius: 1em;
+  height: 1em;
+  width: 1.6em;
+  background-color: #ccd0d9;
 }
-
-#form span {
-  background-origin: padding-box;
-  background-position: 2.5rem -124px;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-image: url(formsprite.png);
+#form::after {
+  font-size: 1.7em;
+  content: ' ';
+  position: absolute;
+  left: 0.1em;
+  top: 0.1em;
+  display: inline-block;
+  border-radius: 50%;
+  height: 0.8em;
+  width: 0.8em;
+  background-color: #fff;
 }
+#form.checked::before { background-color: #1fc174; }
+#form.checked::after { left: .7em; }

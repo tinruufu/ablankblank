@@ -18,30 +18,27 @@
     </script>
   </head>
   <body>
-    <p><span id="content">
-      <span id="tagline">Join the best free dating site on Earth.</span><br>
+    <div id="everything">
+      <p><span id="content">
+        <span id="target">
+          <span class="prefix">a</span> <span class="box">Straight</span> <span class="box">Woman</span> <span class="prefix">but also</span> <span class="box">super gay</span>
+        </span>
 
-      <span class="prefix">I am</span>
+        <span class="box button">Continue</span>
+      </span></p>
 
-      <span id="target">
-        <span class="prefix">a</span> <span class="box">Straight</span> <span class="box">Woman</span> <span class="prefix">but also</span> <span class="box">super gay</span>
-      </span>
-
-      <span class="box button">Continue</span>
-    </span></p>
-
-    <p id="form">
-      <span>
-        I don't want to see or be seen by straight people.
-      </span>
-    </p>
-
+      <p id="form" class="checked">
+        <span>
+          I don't want to see or be seen by straight people.
+        </span>
+      </p>
+    </div>
   </body>
 
   <script>
     function getSize() {
-      var content = document.getElementById('content');
-      return [content.clientWidth + 40, content.clientHeight];
+      var content = document.getElementById('everything');
+      return [content.clientWidth + 200, content.clientHeight];
     }
 
     function setText(items) {
@@ -52,6 +49,9 @@
     
     function hideForm() {
       document.getElementById('form').remove()
+    }
+    function uncheckForm() {
+      document.getElementById('form').classList.remove('checked');
     }
   </script>
 </html>

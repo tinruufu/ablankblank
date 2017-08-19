@@ -20,8 +20,10 @@ def generate_image(structure):
     driver.get(url)
     driver.execute_script('setText({});'.format(json.dumps(structure)))
 
-    if random() > 0.3:
+    if random() > 0.4:
         driver.execute_script('hideForm();')
+    elif random() > 0.5:
+        driver.execute_script('uncheckForm();')
 
     driver.set_window_size(*driver.execute_script('return getSize();'))
     driver.save_screenshot(image_path)

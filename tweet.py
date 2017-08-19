@@ -14,7 +14,7 @@ api = tweepy.API(auth)
 
 def tweet(interactive=False):
     structure = get_structure()
-    status = 'i am {}'.format(' '.join((unicode(s) for s in structure)))
+    status = 'you are {}'.format(' '.join((unicode(s) for s in structure)))
     if interactive:
         print status
         if not raw_input('do u wanna post?\n').startswith('y'):
