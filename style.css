@@ -102,6 +102,7 @@ body {
   position: absolute;
   padding-left: 3.5em;
   line-height: 1.7em;
+  white-space: nowrap;
 }
 #form::before {
   font-size: 1.7em;
