@@ -43,4 +43,4 @@ def generate_image(structure):
 
 if __name__ == '__main__':
     from blank import get_structure
-    print generate_image([segment.context() for segment in get_structure()])
+    print(generate_image([segment.context() for segment in get_structure()]))

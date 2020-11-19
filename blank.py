@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from random import choice
 from time import sleep
 
@@ -43,7 +41,7 @@ class Segment(object):
             'box': self.is_boxed,
         }
 
-    def __unicode__(self):
+    def __str__(self):
         return '[{}]'.format(self.string) if self.is_boxed else self.string
 
     @property
@@ -71,7 +69,7 @@ def get_word():
 def get_example():
     tried = []
 
-    for attempt in xrange(15):
+    for attempt in range(15):
         seed = get_word()
         tried.append(seed)
         resp = requests.get('https://api.bing.com/osjson.aspx',
@@ -117,5 +115,5 @@ def get_structure():
 
 
 if __name__ == '__main__':
-    for i in xrange(10):
-        print ' '.join((unicode(s) for s in get_structure()))
+    for i in range(10):
+        print(' '.join((str(s) for s in get_structure())))
